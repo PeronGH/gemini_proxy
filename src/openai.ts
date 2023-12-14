@@ -66,8 +66,7 @@ export const chatCompletionHandler: Deno.ServeHandler = async (req) => {
 
   if (!request.stream) {
     const { response } = await chat.sendMessage(userMessage.content);
-    const content = response.text();
-    const completion = chatCompletion({ content });
+    const completion = chatCompletion({ content: response.text() });
     return Response.json(completion);
   }
 
