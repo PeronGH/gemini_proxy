@@ -1,3 +1,3 @@
-import { forwarder } from "./src/forwarder.ts";
+import { router } from "./src/router.ts";
 
-Deno.serve(forwarder);
+Deno.serve(router);

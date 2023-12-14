@@ -1,5 +1,3 @@
-const TARGET_ORIGIN = "https://generativelanguage.googleapis.com";
-
 const forward: (targetOrigin: string) => Deno.ServeHandler =
   (targetOrigin) => (req) => {
     const requestOrigin = new URL(req.url).origin;
@@ -7,4 +5,4 @@ const forward: (targetOrigin: string) => Deno.ServeHandler =
     return fetch(newUrl, req);
   };
 
-export const forwarder = forward(TARGET_ORIGIN);
+export const forwarder = forward("https://generativelanguage.googleapis.com");
